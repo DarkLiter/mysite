@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="index.css">
+    <meta charset="UTF-8">
+    <title>My-site</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style> @import url("https://fonts.googleapis.com/icon?family=Material+Icons");</style>
+</head>
+<body>
+    <div id="app">
+        <nav>
+            <transition name="fade" mode="out-in">
+                <i class="material-icons menu" v-if="!show" @click="show = !show" key="menu">menu</i>
+                <i class="material-icons clear" v-else @click="show = !show" key="clear">clear</i>
+            </transition>
+            <transition name="fade">
+                <ul v-if="show">
+                    <li v-for="item in items">{{ item }}</li>
+                </ul>
+            </transition>
+        </nav>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
